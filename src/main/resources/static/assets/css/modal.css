@@ -1,0 +1,97 @@
+/* 모달 배경 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* z-index 값을 높여 다른 요소 위에 나타나게 함 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 스크롤바를 숨기고 모달이 화면을 덮도록 함 */
+    background-color: rgba(0, 0, 0, 0.7); /* 배경을 좀 더 어둡게 하여 모달에 집중되게 함 */
+    backdrop-filter: blur(5px); /* 배경에 블러 효과를 줘서 모달을 강조 */
+    animation: fadeIn 0.3s ease-out; /* 모달이 부드럽게 나타나는 애니메이션 */
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가로 입체감 부여 */
+    animation: slideDown 0.4s ease-out; /* 모달이 부드럽게 아래로 내려오며 나타나는 애니메이션 */
+}
+
+/* 닫기 버튼 */
+.close {
+    color: #555;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 닫기 버튼에 마우스 오버 시 부드러운 색상 전환 */
+}
+
+.close:hover,
+.close:focus {
+    color: #e74c3c; /* 닫기 버튼에 마우스 오버 시 색상 변경 */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 추가적인 input 스타일링 */
+.modal-content input[type="text"] {
+    width: calc(100% - 20px); /* 입력 필드가 컨텐츠 너비에 맞게 조정됨 */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+    border-color: #3498db; /* 입력 필드 포커스 시 색상 변경 */
+    outline: none; /* 기본 브라우저 스타일 제거 */
+}
+
+/* 등록 버튼 스타일링 */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #2980b9; /* 버튼에 마우스 오버 시 색상 변경 */
+}

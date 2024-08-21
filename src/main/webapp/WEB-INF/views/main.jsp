@@ -1,241 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>메인 페이지</title>
-<style>
-/* 메인페이지 */
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-.header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px 30px;
-	background-color: #fff;
-	border-bottom: 1px solid #eaeaea;
-}
-
-.sv {
-	display: flex;
-	justify-content: flex-end;
-	gap: 30px;
-	margin-right: 50px;
-	text-decoration: none;
-	color: #000;
-	font-size: 22px;
-	font-weight: bold;
-	background-color: white; /* 기본 배경색을 흰색으로 설정 */
-	color: #3498db; /* 텍스트 색상은 파란색 */
-}
-
-.sv:hover {
-	background-color: #3498db; /* 마우스를 올렸을 때 파란색으로 변경 */
-	color: white; /* 텍스트 색상은 흰색으로 변경 */
-}
-
-#auth {
-	display: flex;
-	justify-content: flex-end;
-	gap: 30px;
-	margin-right: 50px;
-	text-decoration: none;
-	color: #000;
-}
-
-#auth a {
-	font-size: 22px;
-	font-weight: bold;
-}
-
-a {
-	text-decoration-line: none;
-	color: black;
-}
-
-p {
-	color: rgb(64, 74, 92);
-}
-
-/* 로그인 모달 스타일 */
-.modal {
-	display: none; /* 초기에는 숨겨진 상태 */
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-	padding-top: 60px;
-}
-
-.modal-content {
-	background-color: #fefefe;
-	margin: 5% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
-	max-width: 900px;
-	border-radius: 8px;
-}
-
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.close:hover, .close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.container {
-	display: flex;
-	justify-content: space-between;
-	gap: 20px;
-}
-
-.login-container, .social-login-container {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	width: 45%; /* 각각의 너비를 설정하여 두 영역이 나란히 표시되도록 */
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-td {
-	padding: 10px;
-}
-
-input[type="text"], input[type="password"] {
-	width: calc(100% - 22px);
-	padding: 10px;
-	margin: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-}
-
-input[type="submit"] {
-	width: 100%;
-	padding: 10px;
-	background-color: #000;
-	color: white;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type="submit"]:hover {
-	background-color: #fff;
-	color: #000;
-	border: 1px solid #000;
-}
-
-.signup-button {
-	width: 100%;
-	padding: 10px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	background-color: #dcdcdc;
-	color: #000;
-	margin-top: 10px;
-}
-
-.signup-button:hover {
-	background-color: #dcdcdc;
-	color: white;
-}
-
-.social-login-container ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.social-login-container li {
-	margin-bottom: 10px;
-}
-
-.social-login-button {
-	width: 100%;
-	padding: 10px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	color: white;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.naver-button {
-	background-color: #1DB954;
-}
-
-.kakao-button {
-	background-color: #F7E03C;
-}
-
-.google-button {
-	background-color: white;
-	color: black;
-	border: 1px solid #ccc;
-}
-
-.login-text {
-	text-align: center;
-}
-
-.login-title {
-	font-size: 24px;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-
-.login-message {
-	font-size: 16px;
-	color: #555;
-	margin-bottom: 10px;
-}
-
-.social-login-container p {
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-table, td {
-	border: none;
-}
-</style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolaPower</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
 <body>
 
-	<!-- 메인 페이지 콘텐츠 -->
-	<div class="header">
-		<div class="logo">러닝메이트</div>
+    <!-- header.jsp 파일 포함 -->
+    <jsp:include page="header.jsp" />
+    <main>
+        <div class="main-content">
+            <h1>인공지능(AI)을 활용하여 최적의 태양광 발전소 운영을 위한 발전량 예측 서비스를 제공받을 수 있습니다.</h1>
+            <div class="buttons">
+                <div class="button-container">
+                    <div class="button-text">내 발전소 현황</div>
+                    <a href="loginon">
+                        <button type="button" class="btn_direct">바로가기</button>
+                    </a>
+                </div>
 
 		<div class="sv">
 			<a href="#">발전지도</a>
@@ -244,10 +30,8 @@ table, td {
 			<a href="#">관련소식</a>
 		</div>
 		<div class="sv">
-
-
-			<a href="#">내정보</a>
-			<p>test</p>
+			<a href="#">테스트용</a>
+			
 
 
 			<c:choose>
@@ -288,7 +72,7 @@ table, td {
 											<div class="login-message">모든 서비스를 더욱 편리하게 이용하실 수 있습니다</div>
 											<form action="Real_Login" method="post">
 												<label for="username"></label> <input type="text"
-													id="username" name="memId" required`
+													id="username" name="memId" required
 													placeholder="아이디를 입력해주세요"> <label for="password"></label>
 												<input type="password" id="password" name="memPw" required
 													required placeholder="비밀번호를 입력해주세요"> <input
@@ -349,9 +133,32 @@ table, td {
 						modal.style.display = "none";
 					}
 				}
-			</script>
-					
+			</script>				
 			<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 			<script src="assets/js/kakaoLogin.js"></script>
+                <div class="button-container">
+                    <div class="button-text">전국발전지도</div>
+                    <div class="d-flex flex-column">
+                        <a href="#">
+                            <button type="button" class="btn_direct">바로가기</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="market-trend">
+            <h2>시장동향</h2>
+            <h2>SMP + (REC × 1.0)</h2>
+            <div class="main-value">226.72</div>
+            <div class="separator"></div>
+            <div class="sub-title">SMP</div>
+            <div class="sub-text">오늘 시장가격</div>
+            <div class="value">148.62</div>
+            <div class="sub-title">REC 현물</div>
+            <div class="value">78,100</div>
+        </div>
+    </main>
+   	<!-- footer.jsp 파일 포함 -->
+    <jsp:include page="footer.jsp" /> 
 </body>
 </html>

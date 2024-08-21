@@ -1,0 +1,137 @@
+/* 기본 스타일 초기화 */
+body, h1, form, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 페이지 가로 스크롤 제거 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* 배경을 흰색으로 설정 */
+    color: #333;
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+}
+
+/* 폼 컨테이너 스타일 */
+.form-container {
+    width: 100%; /* 폼의 너비를 부모 요소에 맞춤 */
+    max-width: 750px; /* 최대 너비를 설정하여 가로 스크롤 방지 */
+    margin: 50px auto; /* 페이지 가운데 정렬 */
+    padding: 5px; /* 넉넉한 패딩 설정 */
+    background-color: #fff; /* 배경색을 흰색으로 설정 */
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="date"] {
+    width: 100%; /* 부모 요소의 100% 너비 */
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+}
+
+/* 라벨 스타일 */
+label {
+    font-weight: bold;
+    display: block;
+}
+
+/* 중복체크 버튼 스타일 */
+.button-check {
+    padding: 8px 12px;
+    background-color: #0080ff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* 아이디 입력 필드와 중복 체크 버튼을 가로로 정렬하는 스타일 */
+.input-group {
+    display: flex;
+    align-items: center; /* 입력 필드와 버튼을 수직 가운데 정렬 */
+}
+
+.input-group input[type="text"] {
+    flex: 1; /* 입력 필드가 가능한 넓게 차지하도록 설정 */
+    margin-right: 10px; /* 입력 필드와 버튼 사이에 간격 추가 */
+}
+
+/* 라디오 버튼과 라벨을 한 줄로 정렬하는 스타일 */
+.radio-group {
+    display: flex;
+    align-items: center; /* 라디오 버튼과 라벨을 수직 가운데 정렬 */
+}
+
+.radio-group label {
+    margin-right: 20px; /* 라벨과 다음 요소 사이에 간격 추가 */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* 라디오 버튼과 라벨 사이에 간격 추가 */
+}
+
+
+/* 버튼들을 가로로 정렬하기 위한 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    justify-content: center; /* 버튼들을 가운데 정렬 */
+    gap: 20px; /* 버튼들 사이의 간격을 20px로 설정 */
+}
+
+/* 제출 및 이전단계 버튼 스타일 */
+input[type="submit"], 
+input[type="button"] {
+    width: 150px; /* 버튼의 가로 길이를 150px로 고정 */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-right: 4%;
+}
+
+
+input[type="button"] {
+    background-color: #757575; /* 이전단계 버튼 색상 설정 */
+    margin-right: 0;
+}
+
+input[type="button"]:hover {
+    background-color: #5a5a5a;
+}
+
+input[type="submit"] {
+    background-color: #0080ff; /* 가입요청 버튼 색상을 파란색으로 설정 */
+}
+
+input[type="submit"]:hover {
+    background-color: #1466b8; /* 호버 시 더 진한 파란색으로 변경 */
+}

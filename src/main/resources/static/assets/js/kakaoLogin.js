@@ -60,7 +60,7 @@ function LoginSuccess(nickname){
 			"nickname": nickname
 		},
 		success: function(res) {
-			 window.location.href = "KakaoLogSuc?nickname="+nickname;
+			window.location.href = "KakaoLogSuc?nickname="+nickname;
 		},
 		error: function(e) {
 			console.log("error")

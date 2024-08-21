@@ -1,0 +1,133 @@
+@keyframes backgroundChange {
+    0% {
+        background-image: url('../img/sola.jpg');
+    }
+    25% {
+        background-image: url('../img/sola2.jpg');
+    }
+    50% {
+        background-image: url('../img/sola2.jpg');
+    }
+    100% {
+        background-image: url('../img/sola.jpg');
+    }
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	width: 100%; /* 추가: 너비를 100%로 설정 */
+	font-family: Arial, sans-serif;
+	background-size: cover; /* 배경 이미지를 화면에 꽉 차게 설정 */
+	background-position: center; /* 배경 이미지의 위치를 중앙에 맞춤 */
+	background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
+	background-attachment: fixed; /* 스크롤 시 배경 이미지가 고정되도록 설정 */
+	animation: backgroundChange 20s infinite; /* 배경 애니메이션 */
+}
+
+
+main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 120px 160px;
+}
+
+.main-content {
+	max-width: 60%;
+}
+
+.main-content h1 {
+	font-size: 33px; /* 텍스트가 더 잘 보이도록 크기를 조정 */
+	line-height: 1.5;
+	margin-bottom: 90px;
+	color: white;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.button-container {
+	width: 70%; /* 너비를 80%로 설정 */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.button-text {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.btn_direct {
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	color: white;
+	background-color: #ff7f00;
+	transition: background-color 0.3s ease;
+}
+
+.btn_direct:hover {
+	background-color: #f89b00;
+}
+
+.market-trend {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 30px;
+	border-radius: 10px;
+	width: 300px;
+	margin-top: 120px;
+	margin-right: 100px;
+}
+
+/* 제목 스타일 설정 */
+.market-trend h2 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* 주요 값 스타일 설정 */
+.main-value {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #000;
+}
+
+/* 선 추가 */
+.separator {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+/* SMP, REC 스타일 설정 */
+.sub-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	color: #000;
+}
+
+/* 서브 텍스트 스타일 */
+.sub-text {
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 5px;
+}
+
+/* 숫자 강조 스타일 */
+.value {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ff0000; /* 빨간색 */
+}

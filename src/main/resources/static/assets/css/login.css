@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* 전체 높이 설정 */
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* 페이지 내용 전체를 가운데 정렬 */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto; /* 중앙 정렬 */
+}
+
+.login-form, .social-login {
+    width: 48%;
+}
+
+.login-form h2, .social-login h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form p, .social-login p {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.login-form a {
+    display: block;
+    text-align: center;
+    color: #343a40;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.social-login button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kakao {
+    background-color: #fee500;
+    color: #3c1e1e;
+}
+
+.naver {
+    background-color: #03c75a;
+    color: white;
+}
+
+.google {
+    color: #555;
+    border: 1px solid #ced4da;
+}
+
+.icon {
+    width: 20px;  /* 이미지 너비 조정 */
+    height: 20px; /* 이미지 높이 조정 */
+    margin-right: 10px; /* 텍스트와의 간격 조정 */
+}

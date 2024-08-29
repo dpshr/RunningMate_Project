@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
     });
     
-     // 발전소 카드 클릭 시 색상 변경
+    // 발전소 카드 클릭 시 색상 변경
     $('.plant-card').on('click', function() {
         // 기존의 활성화된 카드에서 active 클래스 제거
         $('.plant-card').removeClass('active');
@@ -41,7 +41,7 @@ $(document).ready(function() {
                 data: [820, 932, 901, 934, 1290, 1330, 1320, 1500, 1450, 1430, 1420, 1350, 1250, 1150, 1100, 1080, 1040, 1000, 960, 920, 880, 850, 820, 790], // 발전량 데이터
                 type: 'bar',
                 itemStyle: {
-                    color: '#33C3FF' // 발전량 차트 색상 (빨강색)
+                    color: '#33C3FF' // 발전량 차트 색상 (파랑색)
                 }
             }]
         };
@@ -58,7 +58,7 @@ $(document).ready(function() {
                 data: [620, 732, 701, 734, 1090, 1130, 1120, 1300, 1250, 1230, 1220, 1150, 1050, 950, 900, 880, 840, 800, 760, 720, 680, 650, 620, 590], // 발전량 데이터
                 type: 'bar',
                 itemStyle: {
-                    color: '#ff8f00' // 내일 발전량 차트 색상 (파랑색)
+                    color: '#ff8f00' // 내일 발전량 차트 색상 (주황색)
                 }
             }]
         };
@@ -176,5 +176,40 @@ $(document).ready(function() {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+
+    // 데이터 요청 및 테이블 업데이트
+    $('#wd').on('click', function() {
+        req();
+    });
+
+    function req() {
+        $.ajax({
+            url: 'dataTable',
+            type: 'get',
+            data: {},
+            success: function(res) {
+                let data = res;
+                console.log("데이터", data);
+
+                for (let i = 0; i < data.length; i++) {
+                    let tr = '<tr>';
+                    tr += '<td>' + data[i].hour + '</td>';
+                    tr += '<td>' + data[i].solarRadiation.toFixed(2) + '</td>';
+                    tr += '<td>' + data[i].temperature.toFixed(2) + '</td>';
+                    tr += '<td>' + data[i].windSpeed.toFixed(2) + '</td>';
+                    tr += '<td>' + data[i].hour + '</td>';
+                    tr += '<td>' + data[i].tm_s.toFixed(2) + '</td>';
+                    tr += '<td>' + data[i].tm_tme.toFixed(2) + '</td>';
+                    tr += '<td>' + data[i].tm_w.toFixed(2) + '</td>';
+                    tr += '</tr>';
+
+                    $('#weather-data-table').append(tr);
+                }
+            },
+            error: function(e) {
+                console.log("error");
+            }
+        });
     }
 });

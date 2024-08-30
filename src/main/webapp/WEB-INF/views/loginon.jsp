@@ -30,7 +30,7 @@
             <div class="plant-list">
                <c:forEach var="plant" items="${PlnatList}">
                   <c:if test="${'N' eq plant.mp_del}">
-                     <div class="plant-card">
+                     <div class="plant-card" id="${plant.plant_id}">
                         <p>
                            <strong>발전소 이름:</strong> ${plant.mp_name}
                         </p>

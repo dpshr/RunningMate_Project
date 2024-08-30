@@ -15,15 +15,24 @@ $(document).ready(function() {
         }
     });
 
+
     // 발전소 카드 클릭 시 색상 변경
-    $('.plant-card').on('click', function() {
+    $('.plant-card').on('click', function(){
         // 기존의 활성화된 카드에서 active 클래스 제거
         $('.plant-card').removeClass('active');
         
         // 클릭된 카드에 active 클래스 추가
         $(this).addClass('active');
-    });
 
+		var plantCards = document.getElementsByClassName("plant-card");
+
+	// 각 요소의 id 값을 출력합니다.
+	for (var i = 0; i < plantCards.length; i++) {
+	console.log(plantCards[i].id);
+	}
+});
+	
+	
     // CSV 다운로드 버튼 클릭 시 CSV 생성 및 다운로드
     $("#excelDownload").click(function() {
         let filename = "generation_data.csv";

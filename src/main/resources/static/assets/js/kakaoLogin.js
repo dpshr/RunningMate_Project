@@ -18,8 +18,7 @@ function kakaoLogin() {
 								|| nickname == undefined) {
 								alert("전체 동의하기 또는 카카오계정(이메일)을 필수 선택해주세요")
 								kakaoLogout();
-							} else {
-								alert("로그인에 성공하셨습니다.")
+						} else {
 								LoginSuccess(nickname)
 							}
 

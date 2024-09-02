@@ -86,7 +86,7 @@ public class MemberController {
 	public String KakaoLogSuc(String nickname, HttpSession session) {
 
 		session.setAttribute("user_nick", nickname);
-
+		session.setAttribute("msgg", "로그인 성공했습니다.");
 		return "redirect:main";
 	}
 	

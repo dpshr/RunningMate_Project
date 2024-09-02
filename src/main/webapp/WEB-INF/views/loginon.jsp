@@ -27,20 +27,20 @@
       <div class="container">
          <aside class="sidebar">
             <div class="plant-list">
-			   <c:forEach var="plant" items="${PlnatList}">
-			      <c:if test="${'N' eq plant.mp_del}">
-			         <div class="plant-card">
-			            <p><strong>발전소 이름:</strong> ${plant.mp_name}</p>
-			            <p><strong>우편번호:</strong> ${plant.zip_code}</p>
-			            <p><strong>주소:</strong> ${plant.p_address}</p>
-			            <p><strong>상세주소:</strong> ${plant.p_detail}</p>
-			            <a href="plantDel?plantId=${plant.plant_id}">
-			               <button>삭제</button>
-			            </a>
-			         </div>
-			      </c:if>
-			   </c:forEach>
-			</div>
+            <c:forEach var="plant" items="${PlnatList}">
+               <c:if test="${'N' eq plant.mp_del}">
+                  <div class="plant-card">
+                     <p><strong>발전소 이름:</strong> ${plant.mp_name}</p>
+                     <p><strong>우편번호:</strong> ${plant.zip_code}</p>
+                     <p><strong>주소:</strong> ${plant.p_address}</p>
+                     <p><strong>상세주소:</strong> ${plant.p_detail}</p>
+                     <a href="plantDel?plantId=${plant.plant_id}">
+                        <button>삭제</button>
+                     </a>
+                  </div>
+               </c:if>
+            </c:forEach>
+         </div>
             <button class="add-plant">발전소 등록 +</button>          
          </aside>
          <section class="main-content">
@@ -268,6 +268,6 @@
          </section>
       </div>
    </main>
-	<jsp:include page="footer.jsp" />
+   <jsp:include page="footer.jsp" />
 </body>
 </html>

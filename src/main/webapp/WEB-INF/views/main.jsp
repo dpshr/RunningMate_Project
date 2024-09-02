@@ -203,7 +203,23 @@
       }
      
    </script>
-   
+   <script>
+   // 카카오톡
+      var msgg = "${sessionScope.msgg}";
+      if (msgg) {
+         Swal.fire({
+            title : "로그인 성공",
+            text : msgg,
+            icon : "success",
+            confirmButtonColor : "#6DD66D", // 확인 버튼 색상 설정
+            confirmButtonText : "확인"
+         });
+        
+   <%session.removeAttribute("msgg");%>
+   <!-- 메시지 출력 후 세션에서 제거 -->
+      }
+     
+   </script>
       
    <jsp:include page="footer.jsp" />
 </body>

@@ -220,7 +220,7 @@
       }
      
    </script>
-      
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
    <jsp:include page="footer.jsp" />
 </body>
 </html>

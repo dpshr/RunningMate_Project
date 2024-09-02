@@ -99,19 +99,60 @@
     outline: none; /* 기본 브라우저 스타일 제거 */
 }
 
-/* 등록 버튼 스타일링 */
-.modal-content button[type="submit"] {
-    width: 100%;
-    padding: 12px 20px;
+/* 우편번호 라벨, 입력 필드, 버튼을 수평으로 배치하는 컨테이너 */
+.postcode-container {
+    display: flex;
+    align-items: center; /* 모든 요소의 수직 정렬을 가운데로 맞춤 */
+    gap: 5px; 
+    margin-bottom: 20px; /* 아래쪽 여백 */
+}
+
+/* 우편번호 입력 필드 스타일 */
+#plant-postcode {
+    width: 77%; /* 입력 필드의 가로 길이 조정 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5; /* 수직 정렬을 위해 입력 필드의 높이 설정 */
+}
+
+/* 우편번호 찾기 버튼 스타일 */
+input[type="button"] {
+    padding: 10px;
     background-color: #3498db;
     border: none;
     border-radius: 8px;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* 버튼 호버 효과 */
+input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+/* 우편번호 라벨 스타일 */
+label[for="plant-postcode"] {
+    font-size: 16px;
+}
+
+
+/* 등록 버튼 스타일링 */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .modal-content button[type="submit"]:hover {
-    background-color: #2980b9; /* 버튼에 마우스 오버 시 색상 변경 */
+    background-color: #2980b9;
 }

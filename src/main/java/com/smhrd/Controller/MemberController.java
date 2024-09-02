@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.smhrd.entity.PlantListDTO;
 import com.smhrd.entity.TblMember;
 import com.smhrd.mapper.MemberMapper;
 import com.smhrd.mapper.PlantMapper;
 import com.smhrd.repository.MemberRepository;
+import com.smhrd.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -27,6 +29,11 @@ public class MemberController {
 	@Autowired
 	PlantMapper plantMapper;
 	
+	@Autowired
+	MemberMapper memberMapper;
+	
+	@Autowired
+	MemberService memberService;
 	// 메인 페이지 호출
 	@RequestMapping("/main")
 	public String goMain() {
@@ -36,10 +43,14 @@ public class MemberController {
 	// 로그인
 	@RequestMapping("/Real_Login")
 	public String Real_Login(String memId, String memPw, HttpSession session) {
-
-		TblMember member = MemRepo.findByMemIdAndMemPw(memId, memPw);
-
-		if (member != null && member.getMemDel().equals("N")) {
+		
+		
+		
+		 TblMember member = MemRepo.findByMemId(memId);
+		 boolean checkPassword = memberService.checkPassword(memId, memPw);
+		 
+		 
+		if (checkPassword == true && member.getMemDel().equals("N")) {
 			session.setAttribute("user", member);
 			session.setAttribute("msg", "로그인 성공했습니다.");
 
@@ -59,8 +70,11 @@ public class MemberController {
 
 	// 회원 가입
 	@RequestMapping("/Real_Join")
-	public String Real_Join(TblMember member) {
+	public String Real_Join(TblMember member){
+		
+		String hashedmemPw= memberService.encryptedPassword(member.getMemPw());
 
+		member.setMemPw(hashedmemPw);
 		MemRepo.save(member);
 		
 		return "redirect:main";

@@ -55,7 +55,7 @@ fetch('assets/json/koreaMap.json')
                             label: {
                             show: true, // 라벨 표시
                             color: '#000000',
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: 'bold', 
                             hideOverlap: true // 라벨이 겹치면 자동으로 숨기기
                         },
@@ -67,7 +67,7 @@ fetch('assets/json/koreaMap.json')
                                 label: {
                                     show: true,
                            color: '#000000',
-                                fontSize: 18, 
+                                fontSize: 14, 
                                 },
                         itemStyle: {
                                 borderColor: '#565656', 
@@ -149,7 +149,7 @@ function updateBarChart(regionName) {
 
     const barOption = {
       title: {
-                  text: `${regionName} 시간대별 발전량`,
+                  text: `▣ ${regionName} 시간대별 발전량`,
                   left: 'left',
                   top: 'top', 
                   textStyle: {
@@ -183,13 +183,16 @@ function updateBarChart(regionName) {
             }
         ],
         yAxis: [
-            {
-                type: 'value',
-                name: '태양광발전량(MWh)', // y축 이름을 '태양광발전량(MWh)'으로 설정
-                nameLocation: 'middle',
-                nameGap: 40
-            }
-        ],
+		    {
+		        type: 'value',
+		        name: '태양광발전량(MWh)',
+		        nameLocation: 'middle',
+		        nameGap: 40,
+		        min: 0,   // y축의 최소값을 0으로 고정
+		        max: 2000 // y축의 최대값을 100으로 고정
+		    }
+		],
+
         series: [
             {
                 name: regionName,
@@ -197,7 +200,7 @@ function updateBarChart(regionName) {
                 barWidth: '60%',
                 data: formattedData, // 소수점 두 자리로 포맷된 데이터 사용
             itemStyle: {
-                          color: '#f1af09' // 막대 색상 설정 (여기서는 파란색)
+                          color: '#f1af09' // 막대 색상 노랑
                       }
             }
         ]

@@ -9,7 +9,7 @@ main {
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding: 20px;
+   padding: 25px;
 }
 
 .container {
@@ -73,45 +73,78 @@ main {
 }
 
 .main-content {
-   width: 80%;
+   width: 70%;
    padding: 20px;
-   background-color: white;
-   border: 1px solid #dee2e6;
+   background: linear-gradient(to bottom, #0091EA,white,white,white,white,white);
+   border-radius: 30px;
 }
 
 .plant-info {
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
 }
 
-.plant-info h3 {
-   margin: 0 0 20px 0;
+#myplant {
+	color: white;
+	font-size: 35px;
+	font-weight: bold;	
 }
 
-.plant-info .info {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 20px;
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* 공간을 균등하게 분배 */
+    align-items: center; /* 수직 가운데 정렬 */
 }
 
-.plant-info .info .item {
-   background-color: #e6f4fa;
-   padding: 20px;
-   margin: 1rem;
-   width: 50%;
-   border-radius: 10px;
-   text-align: center;
-   box-shadow: 4px 5px 2px #9ecde2; /* 그림자 효과 추가 */
+.span-container {
+    display: flex;
+    flex-direction: column; /* 수직으로 나열되도록 설정 */
+    gap: 35px;
 }
 
-i {
-   font-size: 30px;
-   font-style: normal;
+.span-container span {
+    display: block;
+    font-size: 20px;
 }
 
+#address {
+	color: #2e2e2e;
+	font-size: 23px;
+	font-weight: bold;	
+}
+
+.item {
+    padding: 30px 40px;
+    width: 20%;
+    text-align: center;
+    border: 5px outset #e9ecef;
+    border-radius: 10px;
+    margin-right: 100px;  
+}
+
+.item p {
+    margin: 10px 0;
+        font-size: 22px;
+}
+.spans {
+	font-size: 35px;
+}
+.bi-currency-exchange{
+	color: #f1af09;
+	font-size: 38px;
+}
+.bi-brightness-low-fill {
+	color: #f7e600;
+	font-size: 30px;
+}
+
+.bi-thermometer-half {
+	font-size: 25px;
+} 
 /* 탭 및 테이블 스타일링 */
 .tabs {
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-left: 1rem; 
 }
 
@@ -179,6 +212,6 @@ thead th {
     background-color: #eaedf2;
 }
 
-tbody tr:hover {
-    background-color: #e9ecef;
+.hover-effect:hover {
+    background-color: #e9ecef; /* 커서를 올렸을 때 배경색 */
 }

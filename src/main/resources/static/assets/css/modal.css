@@ -1,0 +1,158 @@
+/* 모달 배경 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px); 
+    animation: fadeIn 0.3s ease-out; 
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    animation: slideDown 0.4s ease-out; 
+}
+
+/* 닫기 버튼 */
+.close {
+    color: #555;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.close:hover,
+.close:focus {
+    color: #e74c3c; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 모달 헤더 스타일 */
+.modal-header {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+    gap: 8px;
+}
+
+/* 모달 제목 스타일 */
+.modal-header h2 {
+    margin: 0; 
+    font-size: 1.5em;
+}
+
+/* 모달 아이콘 스타일 */
+.modal-header i {
+    font-size: 2em;
+    margin-bottom: 10px; 
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 추가적인 input 스타일링 */
+.modal-content input[type="text"] {
+    width: calc(100% - 20px); /* 입력 필드가 컨텐츠 너비에 맞게 조정됨 */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+    border-color: #3498db; /* 입력 필드 포커스 시 색상 변경 */
+    outline: none; /* 기본 브라우저 스타일 제거 */
+}
+
+/* 우편번호 라벨, 입력 필드, 버튼을 수평으로 배치하는 컨테이너 */
+.postcode-container {
+    display: flex;
+    align-items: center; /* 모든 요소의 수직 정렬을 가운데로 맞춤 */
+    gap: 5px; 
+    margin-bottom: 20px; /* 아래쪽 여백 */
+}
+
+/* 우편번호 입력 필드 스타일 */
+#plant-postcode {
+    width: 77%; /* 입력 필드의 가로 길이 조정 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5; /* 수직 정렬을 위해 입력 필드의 높이 설정 */
+}
+
+/* 우편번호 찾기 버튼 스타일 */
+input[type="button"] {
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* 버튼 호버 효과 */
+input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+/* 우편번호 라벨 스타일 */
+label[for="plant-postcode"] {
+    font-size: 16px;
+}
+
+
+/* 등록 버튼 스타일링 */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #2980b9;
+}

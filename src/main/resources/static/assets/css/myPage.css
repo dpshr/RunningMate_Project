@@ -1,0 +1,152 @@
+body, h1, form, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 5px;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+#memId, 
+input[type="date"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+}
+
+input[type="password"], 
+input[type="email"],
+#memName {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.btn1 {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #00ac00;
+    transition: background-color 0.3s;
+}
+
+.btn1:hover {
+    background-color: #008000;
+}
+
+.btn2 {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #c0c0c0;
+    transition: background-color 0.3s;
+
+}
+
+.btn2:hover {
+    background-color: #808080;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 라디오 버튼과 라벨을 한 줄로 정렬하는 스타일 */
+.radio-group {
+    display: flex;
+    align-items: center; 
+}
+
+.radio-group label {
+    margin-right: 15px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px; 
+}
+
+.gender-label {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.birth-label {
+	margin-top: 20px;
+    margin-bottom: 1px;
+    display: inline-block;
+}
